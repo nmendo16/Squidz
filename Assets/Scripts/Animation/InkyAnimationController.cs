@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class InkyAnimationController : MonoBehaviour
@@ -28,7 +29,24 @@ public class InkyAnimationController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            // Get the shooter from the bullet
+            GameObject shooter = collision.gameObject.GetComponent<TESTBullet>().shooter;
+
+            // Trigger the winning animation for the shooter
+            shooter.GetComponent<InkyAnimationController>().PlayWinning();
+
+            // Trigger the damage animation for the hit player
             PlayDamage();
+
+            // Start the coroutine to return to idle after 3 seconds
+            StartCoroutine(ReturnToIdle());
         }
     }
+
+    private IEnumerator ReturnToIdle()
+    {
+        yield return new WaitForSeconds(3);
+        PlayIdle();
+    }
 }
+
