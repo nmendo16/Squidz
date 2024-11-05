@@ -72,7 +72,7 @@ public class CameraBehaviour : MonoBehaviour
             cameraComponent.orthographicSize = Mathf.Lerp(cameraComponent.orthographicSize, desiredZoom, Time.fixedDeltaTime * zoomSpeed);
 
             // Log for debugging purposes
-            Debug.Log("Center Position: " + targetPosition + ", Distance: " + distance + ", Zoom: " + cameraComponent.orthographicSize);
+            //Debug.Log("Center Position: " + targetPosition + ", Distance: " + distance + ", Zoom: " + cameraComponent.orthographicSize);
         }
 
         // when a player is defeated 

@@ -16,7 +16,7 @@ public class NewPlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        gun = GetComponentInChildren<GunBehavior>();
+        equip();
     }
 
     // Update is called once per frame
@@ -90,6 +90,23 @@ public class NewPlayerMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        StartCoroutine(EquipWithDelay());
+    }
+
+    private IEnumerator EquipWithDelay()
+    {
+        // Wait for a frame to ensure gun instantiation completes
+        yield return null;
+        equip();
+    }
+
+    public void equip()
+    {
+        gun = GetComponentInChildren<GunBehavior>();
     }
 
 }
