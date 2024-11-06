@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1608081158184463342}
-  - component: {fileID: 5484922945291088827}
   m_Layer: 0
   m_Name: BasicShot
   m_TagString: Untagged
@@ -33,24 +32,6 @@ Transform:
   - {fileID: 3344825760187277331}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5484922945291088827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2294883831422702799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d2d186c27691846962273ed0411118, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunRecoil: 0
-  gunSprite: {fileID: 0}
-  gunCooldown: 0
-  cooldownTimer: 0
-  shootingPoint: {fileID: 3344825760187277331}
-  bulletPrefab: {fileID: 7903343888328806638, guid: af9cdf0b6acc11b4eb06d51085711374, type: 3}
 --- !u!1 &2365386423892795268
 GameObject:
   m_ObjectHideFlags: 0

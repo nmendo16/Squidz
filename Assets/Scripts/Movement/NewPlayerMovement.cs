@@ -1,25 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class NewPlayerMovement : MonoBehaviour
 {
-
     public float rotationSpeed = 200f;
     public float hp = 100f;
-    public GunBehavior gun;
-
     [SerializeField] private bool isPlayer2 = false;
+
     private Rigidbody2D rb;
-    // Start is called before the first frame update
+    private GunManager gunManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        equip();
+        gunManager = GetComponent<GunManager>();
+        gunManager.EquipGun();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         HandleRotation();
@@ -28,14 +24,22 @@ public class NewPlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.S))
             {
-                Shoot();
+                gunManager.Shoot();
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                gunManager.SwitchGun();
             }
         }
         else
         {
             if (Input.GetKey(KeyCode.L))
             {
-                Shoot();
+                gunManager.Shoot();
+            }
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                gunManager.SwitchGun();
             }
         }
 
@@ -43,47 +47,19 @@ public class NewPlayerMovement : MonoBehaviour
         {
             rb.velocity = rb.velocity * 0.98f;
         }
-
-    }
-
-    void Shoot()
-    {
-        // Apply an impulse in the opposite direction of the current rotation (backward)
-
-        //rb.velocity = Vector2.zero;
-        rb.AddForce(-transform.up * gun.Shoot(), ForceMode2D.Impulse);
-
-        // Start tracking movement time and position
-
-        //Shoot bullet
-        //ProjectileBase projectile = Instantiate(this.projectilePrefab, this.transform.position, this.transform.rotation);
-        // projectile.Project(this.transform.up);
     }
 
     void HandleRotation()
     {
-        // Rotate the player
-        if (!isPlayer2)
+        float horizontalInput = isPlayer2 ? Input.GetAxis("Horizontal2") : Input.GetAxis("Horizontal");
+        if (horizontalInput != 0)
         {
-            float horizontalInput = Input.GetAxis("Horizontal"); // Z is -1, X is +1
-            if (horizontalInput != 0)
-            {
-                transform.Rotate(Vector3.forward * -horizontalInput * rotationSpeed * Time.deltaTime);
-            }
-        }
-        else
-        {
-            float horizontalInput = Input.GetAxis("Horizontal2"); // , is -1, . is +1
-            if (horizontalInput != 0)
-            {
-                transform.Rotate(Vector3.forward * -horizontalInput * rotationSpeed * Time.deltaTime);
-            }
+            transform.Rotate(Vector3.forward * -horizontalInput * rotationSpeed * Time.deltaTime);
         }
     }
 
     public void OnHit(float damage)
     {
-        
         hp -= damage;
         Debug.Log(hp);
         if (hp <= 0)
@@ -91,22 +67,4 @@ public class NewPlayerMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        StartCoroutine(EquipWithDelay());
-    }
-
-    private IEnumerator EquipWithDelay()
-    {
-        // Wait for a frame to ensure gun instantiation completes
-        yield return null;
-        equip();
-    }
-
-    public void equip()
-    {
-        gun = GetComponentInChildren<GunBehavior>();
-    }
-
 }
