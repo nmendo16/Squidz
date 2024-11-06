@@ -6,9 +6,12 @@ public class GunManager : MonoBehaviour
     public GameObject[] gunPrefabs;
     public KeyCode switchKey = KeyCode.E; // Default key to switch weapons
     public GameObject gunHolder; // Reference to the object where guns will be spawned
+    public float cooldownTime = 1.5f; // Cooldown time after switching weapons
 
     private GunBehavior currentGun;
     private int currentGunIndex = 0;
+    private bool canSwitch = true; // Boolean to check if weapon switching is allowed
+    private bool canShoot = true;  // Boolean to check if shooting is allowed
 
     private void Start()
     {
@@ -17,9 +20,9 @@ public class GunManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(switchKey))
+        if (Input.GetKeyDown(switchKey) && canSwitch)
         {
-            SwitchGun();
+            StartCoroutine(SwitchGunWithCooldown());
         }
     }
 
@@ -40,6 +43,16 @@ public class GunManager : MonoBehaviour
         }
     }
 
+    private IEnumerator SwitchGunWithCooldown()
+    {
+        canSwitch = false;
+        canShoot = false; // Disable shooting during cooldown
+        SwitchGun();
+        yield return new WaitForSeconds(cooldownTime);
+        canSwitch = true;
+        canShoot = true; // Re-enable shooting after cooldown
+    }
+
     public void SwitchGun()
     {
         if (currentGun != null)
@@ -54,7 +67,7 @@ public class GunManager : MonoBehaviour
 
     public void Shoot()
     {
-        if (currentGun != null)
+        if (currentGun != null && canShoot) // Check if shooting is allowed
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             rb.AddForce(-transform.up * currentGun.Shoot(), ForceMode2D.Impulse);

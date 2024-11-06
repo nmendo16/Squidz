@@ -5,6 +5,7 @@ public class GunBehavior : MonoBehaviour
     public float damage = 10f;
     public float impulse = 5f;
     public float velocityMultiplier = 1.0f;
+    public float bulletAcelleration = 1.0f;
     public GameObject bullet;
     public Transform ShootingPoint;
  
@@ -19,6 +20,10 @@ public class GunBehavior : MonoBehaviour
         if (rb != null)
         {
             rb.AddForce(ShootingPoint.up * velocityMultiplier, ForceMode2D.Impulse);
+            if (bulletAcelleration > 1)
+            {
+
+            }
         }
 
         // Logic for shooting, like playing sound effects or animations
