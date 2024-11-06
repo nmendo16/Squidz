@@ -227,6 +227,7 @@ MonoBehaviour:
   - {fileID: 6080990581192593414, guid: c198531056a381441b0cd2991caa505b, type: 3}
   switchKey: 101
   gunHolder: {fileID: 284836718}
+  cooldownTime: 1
 --- !u!4 &356507659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6428657485878442727, guid: 7f450aeb202e8104b8e60bb206aeabbe, type: 3}
@@ -254,6 +255,7 @@ MonoBehaviour:
   - {fileID: 6080990581192593414, guid: c198531056a381441b0cd2991caa505b, type: 3}
   switchKey: 274
   gunHolder: {fileID: 1057652383}
+  cooldownTime: 1.5
 --- !u!4 &540560028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7981098911496537338, guid: 9e0e949d98657e048ab02e5e7f008e50, type: 3}

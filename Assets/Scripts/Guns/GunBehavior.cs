@@ -1,33 +1,49 @@
 using UnityEngine;
-
+using System.Collections;
 public class GunBehavior : MonoBehaviour
 {
     public float damage = 10f;
     public float impulse = 5f;
     public float velocityMultiplier = 1.0f;
     public float bulletAcelleration = 1.0f;
+    public float extraAcceleration = 5.0f; // Additional force to apply
+    public float delayTime = 1.0f; // Time in seconds before applying extra force
     public GameObject bullet;
     public Transform ShootingPoint;
- 
 
     public float Shoot()
     {
         GameObject bulletInstance = Instantiate(bullet, ShootingPoint.position, ShootingPoint.rotation);
 
-        //Apply force to the bullet
-
+        // Apply initial force to the bullet
         Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
             rb.AddForce(ShootingPoint.up * velocityMultiplier, ForceMode2D.Impulse);
-            if (bulletAcelleration > 1)
-            {
 
+            // Check if acceleration is greater than 10.0f
+            if (extraAcceleration > 4.0f)
+            {
+                // Start a coroutine to add extra acceleration after a delay
+                StartCoroutine(AddExtraAcceleration(rb));
             }
         }
 
         // Logic for shooting, like playing sound effects or animations
         Debug.Log("Gun fired with impulse: " + impulse);
         return impulse;
+    }
+
+    private IEnumerator AddExtraAcceleration(Rigidbody2D rb)
+    {
+        // Wait for the specified delay time
+        yield return new WaitForSeconds(delayTime);
+
+        // Apply additional force to the bullet
+        if (rb != null)
+        {
+            rb.AddForce(ShootingPoint.up * extraAcceleration * 3, ForceMode2D.Impulse);
+            Debug.Log("Extra acceleration applied: " + extraAcceleration);
+        }
     }
 }
