@@ -13,7 +13,16 @@ public class NewPlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         gunManager = GetComponent<GunManager>();
-        gunManager.EquipGun();
+
+        // Check if GunManager is assigned properly
+        if (gunManager == null)
+        {
+            Debug.LogError("GunManager component is missing on " + gameObject.name);
+        }
+        else
+        {
+            gunManager.EquipGun(); // Equip the gun once during start
+        }
     }
 
     void FixedUpdate()
@@ -43,6 +52,7 @@ public class NewPlayerMovement : MonoBehaviour
             }
         }
 
+        // Decelerate when moving
         if (rb.velocity.magnitude > 0)
         {
             rb.velocity = rb.velocity * 0.98f;
