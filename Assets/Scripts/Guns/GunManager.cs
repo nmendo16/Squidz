@@ -27,8 +27,12 @@ public class GunManager : MonoBehaviour
     {
         if (gunPrefabs.Length > 0 && gunHolder != null)
         {
-            GameObject initialGun = Instantiate(gunPrefabs[currentGunIndex], gunHolder.transform);
-            currentGun = initialGun.GetComponent<GunBehavior>();
+            if (currentGun != null)
+            {
+                Destroy(currentGun.gameObject);
+            }
+            GameObject newGun = Instantiate(gunPrefabs[currentGunIndex], gunHolder.transform);
+            currentGun = newGun.GetComponent<GunBehavior>();
         }
         else
         {
