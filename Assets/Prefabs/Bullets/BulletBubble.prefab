@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 9004596085267846850}
   - component: {fileID: 789437138700985278}
   - component: {fileID: 7672623551743335603}
-  - component: {fileID: 3691798539474597883}
+  - component: {fileID: 5020833850964577961}
   m_Layer: 3
   m_Name: BulletBubble
   m_TagString: Bullet
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3691798539474597883
+--- !u!114 &5020833850964577961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

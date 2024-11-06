@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2751927953753386287}
   - component: {fileID: 3709747185271796093}
-  - component: {fileID: 3040934208960570871}
   - component: {fileID: 4336355264208607920}
+  - component: {fileID: -1251313911470214752}
   m_Layer: 3
   m_Name: BulletCannon
   m_TagString: Bullet
@@ -62,18 +62,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3040934208960570871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5819930154466079903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ae5ff09de8758c47b3b1b96bb464360, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &4336355264208607920
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -109,6 +97,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &-1251313911470214752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5819930154466079903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69d7d083dc1b924d80a7a2c5a2d2a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  lifetime: 5
 --- !u!1 &8266427422663606850
 GameObject:
   m_ObjectHideFlags: 0

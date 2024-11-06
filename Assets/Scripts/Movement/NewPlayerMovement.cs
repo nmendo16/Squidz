@@ -14,7 +14,6 @@ public class NewPlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gunManager = GetComponent<GunManager>();
 
-        // Check if GunManager is assigned properly
         if (gunManager == null)
         {
             Debug.LogError("GunManager component is missing on " + gameObject.name);
@@ -55,7 +54,7 @@ public class NewPlayerMovement : MonoBehaviour
         // Decelerate when moving
         if (rb.velocity.magnitude > 0)
         {
-            rb.velocity = rb.velocity * 0.98f;
+            rb.velocity *= 0.98f;
         }
     }
 
@@ -64,7 +63,7 @@ public class NewPlayerMovement : MonoBehaviour
         float horizontalInput = isPlayer2 ? Input.GetAxis("Horizontal2") : Input.GetAxis("Horizontal");
         if (horizontalInput != 0)
         {
-            transform.Rotate(Vector3.forward * -horizontalInput * rotationSpeed * Time.deltaTime);
+            rb.rotation += -horizontalInput * rotationSpeed * Time.deltaTime;
         }
     }
 
