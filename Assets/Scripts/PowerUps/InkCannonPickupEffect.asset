@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb09b43996b5ff4c900dbc5a6cc9a53, type: 3}
   m_Name: InkCannonPickupEffect
   m_EditorClassIdentifier: 
-  gunType: {fileID: 1669916870054020526, guid: 9be829dc67f6bec4da7819d0cc9695e0, type: 3}
+  gunType: {fileID: 6080990581192593414, guid: c198531056a381441b0cd2991caa505b, type: 3}
