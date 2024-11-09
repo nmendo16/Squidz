@@ -76,4 +76,9 @@ public class NewPlayerMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public bool GetPlayerNumber()
+    {
+        return isPlayer2;
+    }
 }
