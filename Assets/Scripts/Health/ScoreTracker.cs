@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ScoreTracker : MonoBehaviour
 {
-    private int player1Score = 0;
-    private int player2Score = 0;
+    private static int player1Score = 0;
+    private static int player2Score = 0;
 
     // Start is called before the first frame update
     void Start()
