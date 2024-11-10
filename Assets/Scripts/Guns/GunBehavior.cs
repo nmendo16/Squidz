@@ -30,7 +30,7 @@ public class GunBehavior : MonoBehaviour
         }
 
         // Logic for shooting, like playing sound effects or animations
-        Debug.Log("Gun fired with impulse: " + impulse);
+        //Debug.Log("Gun fired with impulse: " + impulse);
         return impulse;
     }
 

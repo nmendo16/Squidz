@@ -13,6 +13,8 @@ public class GunManager : MonoBehaviour
     private bool canSwitch = true; // Boolean to check if weapon switching is allowed
     private bool canShoot = true;  // Boolean to check if shooting is allowed
 
+    
+
     private void Start()
     {
         EquipGun();

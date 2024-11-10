@@ -250,6 +250,9 @@ MonoBehaviour:
   damage: 2
   impulse: 1
   velocityMultiplier: 5
+  bulletAcelleration: 1
+  extraAcceleration: 1
+  delayTime: 1
   bullet: {fileID: 7224270283458579912, guid: c6ff5c2297859f3478249f988013fe18, type: 3}
   ShootingPoint: {fileID: 646691626586567888}
 --- !u!1 &8881588694750315966

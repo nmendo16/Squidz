@@ -252,7 +252,7 @@ MonoBehaviour:
   velocityMultiplier: 1
   bulletAcelleration: 1
   extraAcceleration: 11
-  delayTime: 1
+  delayTime: 2
   bullet: {fileID: 5819930154466079903, guid: ada2674911ec2254a86f2f70dd5e71eb, type: 3}
   ShootingPoint: {fileID: 646691626586567888}
 --- !u!1 &8881588694750315966

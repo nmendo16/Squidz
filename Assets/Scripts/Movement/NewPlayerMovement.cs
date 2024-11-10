@@ -8,7 +8,8 @@ public class NewPlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private GunManager gunManager;
-
+    public Collider2D arenaCollider;// add the arena bouds collider
+    public float bounceLearp = 5f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,7 +28,7 @@ public class NewPlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         HandleRotation();
-
+        
         if (!isPlayer2)
         {
             if (Input.GetKey(KeyCode.S))
@@ -54,8 +55,20 @@ public class NewPlayerMovement : MonoBehaviour
         // Decelerate when moving
         if (rb.velocity.magnitude > 0)
         {
-            rb.velocity *= 0.98f;
+            rb.velocity *= 0.90f;
         }
+
+        if (arenaCollider != null && !arenaCollider.bounds.Contains((Vector2)transform.position))
+        {
+            // Calculate the nearest point on the collider bounds and set the player’s position to that point
+            Vector2 closestPoint = arenaCollider.ClosestPoint(transform.position);
+            transform.position = Vector2.Lerp(transform.position, closestPoint, Time.deltaTime * bounceLearp);
+
+
+            // Optional: Set velocity to zero to prevent further movement out of bounds
+            rb.velocity = Vector2.zero;
+        }
+
     }
 
     void HandleRotation()
@@ -76,4 +89,5 @@ public class NewPlayerMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

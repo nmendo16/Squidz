@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         // Example interaction: log collision details for debugging
-        Debug.Log("Projectile collided with: " + collision.gameObject.name);
+        //Debug.Log("Projectile collided with: " + collision.gameObject.name);
 
         // Additional logic for interactions can be added here
 
