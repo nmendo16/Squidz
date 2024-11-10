@@ -8,6 +8,7 @@ public class ApplyGunPickup : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.CompareTag("Player"))
         Destroy(gameObject);
         pickupType.pickup(collision.gameObject);
     }

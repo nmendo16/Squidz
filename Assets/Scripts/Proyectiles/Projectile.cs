@@ -15,7 +15,11 @@ public class Projectile : MonoBehaviour
         // Example interaction: log collision details for debugging
         //Debug.Log("Projectile collided with: " + collision.gameObject.name);
 
-        // Additional logic for interactions can be added here
+        //Deal damage if colliding with player
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerHealthSystem>().OnHit(damage);
+        }
 
         // Destroy the projectile on collision
         Destroy(gameObject);
