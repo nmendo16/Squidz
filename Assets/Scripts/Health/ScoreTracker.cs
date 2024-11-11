@@ -43,12 +43,14 @@ public class ScoreTracker : MonoBehaviour
 
         else if (player1Score < player2Score)
         {
-            SceneManager.LoadScene("player1Wins");
+            SceneManager.LoadScene("player2Wins");
         }
 
         else
         {
-            SceneManager.LoadScene("player2Wins");
+            SceneManager.LoadScene("player1Wins");
         }
+
+        HealthEventManager.PlayerDied -= AwardPoint;
     }
 }

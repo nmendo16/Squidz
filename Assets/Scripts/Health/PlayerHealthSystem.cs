@@ -16,6 +16,7 @@ public class PlayerHealthSystem : MonoBehaviour
     public void OnHit(float damage)
     {
         hp -= damage;
+        Debug.Log("HP = " + hp);
         if (hp <= 0)
         {
             HealthEventManager.PlayerDiedEvent(player.GetPlayerNumber());
