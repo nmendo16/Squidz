@@ -11,4 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prefabs/Scenes/ShaneTestScene.unity
     guid: c4f7f3c23e98d954db054754f8879044
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 98713a906b7a9c4438fbdcb8ce3006fe
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 2bfb5cc123938ae429fdbef0f1cffff0
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 7b56d0a8413c9e84d809e4b6049138d5
+  - enabled: 1
+    path: Assets/Scenes/Player2Wins.unity
+    guid: 45c1103ac853e3647a1943278785c3fe
+  - enabled: 1
+    path: Assets/Scenes/Player1Wins.unity
+    guid: 64c877d47d0cb7b4a84d535e336c79bb
   m_configObjects: {}
