@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+
 public class GunBehavior : MonoBehaviour
 {
     public float damage = 10f;
@@ -8,30 +9,46 @@ public class GunBehavior : MonoBehaviour
     public float bulletAcelleration = 1.0f;
     public float extraAcceleration = 5.0f; // Additional force to apply
     public float delayTime = 1.0f; // Time in seconds before applying extra force
+    public float rateOfFire = 0.5f; // Time in seconds between shots (0.5s for 2 shots per second)
+    private float lastShotTime; // Time when the last shot was fired
+
     public GameObject bullet;
     public Transform ShootingPoint;
 
+    private void Start()
+    {
+        lastShotTime = -rateOfFire; // Allows shooting immediately at the start
+    }
+
     public float Shoot()
     {
-        GameObject bulletInstance = Instantiate(bullet, ShootingPoint.position, ShootingPoint.rotation);
-
-        // Apply initial force to the bullet
-        Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        // Check if enough time has passed since the last shot
+        if (Time.time - lastShotTime >= rateOfFire)
         {
-            rb.AddForce(ShootingPoint.up * velocityMultiplier, ForceMode2D.Impulse);
+            lastShotTime = Time.time; // Update the last shot time
 
-            // Check if acceleration is greater than 10.0f
-            if (extraAcceleration > 4.0f)
+            GameObject bulletInstance = Instantiate(bullet, ShootingPoint.position, ShootingPoint.rotation);
+
+            // Apply initial force to the bullet
+            Rigidbody2D rb = bulletInstance.GetComponent<Rigidbody2D>();
+            if (rb != null)
             {
-                // Start a coroutine to add extra acceleration after a delay
-                StartCoroutine(AddExtraAcceleration(rb));
+                rb.AddForce(ShootingPoint.up * velocityMultiplier, ForceMode2D.Impulse);
+
+                // Check if acceleration is greater than 4.0f
+                if (extraAcceleration > 4.0f)
+                {
+                    // Start a coroutine to add extra acceleration after a delay
+                    StartCoroutine(AddExtraAcceleration(rb));
+                }
             }
+
+            // Logic for shooting, like playing sound effects or animations
+            // Debug.Log("Gun fired with impulse: " + impulse);
+            return impulse;
         }
 
-        // Logic for shooting, like playing sound effects or animations
-        //Debug.Log("Gun fired with impulse: " + impulse);
-        return impulse;
+        return 0f; // No shot fired due to cooldown
     }
 
     private IEnumerator AddExtraAcceleration(Rigidbody2D rb)

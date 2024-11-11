@@ -37,8 +37,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _VIntensity: 1.395
-    - _VPower: 10
+    - _VIntensity: 1.819
+    - _VPower: 5.96
     - _VoroSpeed: 2
     m_Colors:
     - _Vcolor: {r: 0.006274463, g: 0.1065211, b: 0.4433962, a: 0}
