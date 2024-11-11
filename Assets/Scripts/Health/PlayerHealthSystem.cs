@@ -31,11 +31,14 @@ public class PlayerHealthSystem : MonoBehaviour
         // Check if the player's health has reached 0 or below
         if (hp <= 0)
         {
+            
             // Call the win event to determine the winner
-           // HealthEventManager.PlayerDiedEvent(player.GetPlayerNumber());
+            
 
             // Call the win event from WinEvent script to check who won
             winEventSystem.CheckForWin(); // Assuming CheckForWin() handles the win condition
+            HealthEventManager.PlayerDiedEvent(player.GetPlayerNumber());
+
 
             // Optionally, you can stop further health updates or handle death logic here
         }
