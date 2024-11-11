@@ -217,6 +217,8 @@ MonoBehaviour:
   rotationSpeed: 200
   hp: 100
   isPlayer2: 1
+  arenaCollider: {fileID: 0}
+  bounceLearp: 5
 --- !u!50 &249897922454688530
 Rigidbody2D:
   serializedVersion: 4
@@ -275,6 +277,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   player: {fileID: 8361952122693661568}
+  healthSprites:
+  - {fileID: 21300000, guid: e625c83e9fa457d4ba6f25be22fe05ee, type: 3}
+  - {fileID: 21300000, guid: 5b960175ce691084cb2c71a94f338a39, type: 3}
+  - {fileID: 21300000, guid: 081a37bc321122741b763bf0b9f11be5, type: 3}
+  - {fileID: 21300000, guid: 7d975a908f567854ca7c940f751833b4, type: 3}
+  - {fileID: 21300000, guid: 8cbc664908c7fea44a03deff2da8cb61, type: 3}
+  - {fileID: 21300000, guid: 22f55c0716581684e940777d0f206839, type: 3}
+  healthImage: {fileID: 0}
+  winEventSystem: {fileID: 0}
 --- !u!70 &2205950513870671294
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
