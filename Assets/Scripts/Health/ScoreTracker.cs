@@ -37,8 +37,13 @@ public class ScoreTracker : MonoBehaviour
 
         if (player1Score < 3 && player2Score < 3)
         {
-            string leveltoload = levels[Random.Range(0, levels.Length)];
-            SceneManager.LoadScene(leveltoload);
+            string currentLevel = SceneManager.GetActiveScene().name;
+            string levelToload = levels[Random.Range(0, levels.Length)];
+            while (levelToload == currentLevel)
+            {
+                levelToload = levels[Random.Range(0, levels.Length)];
+            }
+            SceneManager.LoadScene(levelToload);
         }
 
         else if (player1Score < player2Score)

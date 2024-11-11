@@ -33,11 +33,9 @@ public class PlayerHealthSystem : MonoBehaviour
         {
             
             // Call the win event to determine the winner
-            
-
+            StartCoroutine(PlayerDiedCorutine());
             // Call the win event from WinEvent script to check who won
-            winEventSystem.CheckForWin(); // Assuming CheckForWin() handles the win condition
-            HealthEventManager.PlayerDiedEvent(player.GetPlayerNumber());
+            
 
 
             // Optionally, you can stop further health updates or handle death logic here
@@ -64,4 +62,12 @@ public class PlayerHealthSystem : MonoBehaviour
         healthImage.sprite = healthSprites[spriteIndex];
 
     }
+
+    IEnumerator PlayerDiedCorutine()
+    {
+        winEventSystem.CheckForWin(); // Assuming CheckForWin() handles the win condition
+        yield return new WaitForSeconds(3);
+        HealthEventManager.PlayerDiedEvent(player.GetPlayerNumber());
+    }
+
 }

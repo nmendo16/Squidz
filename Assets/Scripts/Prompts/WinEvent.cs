@@ -45,6 +45,6 @@ public class WinEvent : MonoBehaviour
         }
 
         // Optionally, you can stop the game (pause) here if you like
-        Time.timeScale = 0; // Pauses the game
+        //Time.timeScale = 0; // Pauses the game
     }
 }
