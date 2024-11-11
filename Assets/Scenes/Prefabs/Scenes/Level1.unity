@@ -969,6 +969,10 @@ PrefabInstance:
       propertyPath: healthSprites.Array.data[5]
       value: 
       objectReference: {fileID: 21300000, guid: d4c573fde1596274b9630841af35ffe2, type: 3}
+    - target: {fileID: 1749679671556223683, guid: 5b303feaadf25cc4294f9abaad68ceeb, type: 3}
+      propertyPath: gunPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6080990581192593414, guid: 802e3090f997312479845b107a9dd414, type: 3}
     - target: {fileID: 2327162277771036557, guid: 5b303feaadf25cc4294f9abaad68ceeb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20
