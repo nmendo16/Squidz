@@ -90,4 +90,9 @@ public class NewPlayerMovement : MonoBehaviour
         }
     }
 
+    public bool GetPlayerNumber()
+    {
+        return isPlayer2;
+    }
+
 }
