@@ -41,10 +41,9 @@ public class ScoreTracker : MonoBehaviour
             player2Animator.SetBool("win", true);
             Debug.Log("Player1 has " + player2Score + " points");
 
-            StartCoroutine(ChangeScene());
         }
+        StartCoroutine(ChangeScene());
 
-        
     }
 
     IEnumerator ChangeScene()
