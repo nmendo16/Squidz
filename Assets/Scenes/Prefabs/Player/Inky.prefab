@@ -259,8 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunPrefabs:
-  - {fileID: 6080990581192593414, guid: 802e3090f997312479845b107a9dd414, type: 3}
-  switchKey: 274
+  - {fileID: 7508749732682591799, guid: 71b6e8167b0bb4d40bebb92905ea610c, type: 3}
+  switchKey: 107
   gunHolder: {fileID: 2538851155507383796}
   cooldownTime: 1.5
 --- !u!114 &8440605379316511182

@@ -812,7 +812,7 @@ PrefabInstance:
     - target: {fileID: 1749679671556223683, guid: 5b303feaadf25cc4294f9abaad68ceeb, type: 3}
       propertyPath: gunPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 6080990581192593414, guid: 802e3090f997312479845b107a9dd414, type: 3}
+      objectReference: {fileID: 7508749732682591799, guid: 71b6e8167b0bb4d40bebb92905ea610c, type: 3}
     - target: {fileID: 2327162277771036557, guid: 5b303feaadf25cc4294f9abaad68ceeb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -20

@@ -247,13 +247,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a6ededbfc8e3043ac359e19f4db231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
-  impulse: 30
-  velocityMultiplier: 1
+  damage: 30
+  impulse: 100
+  velocityMultiplier: 60
   bulletAcelleration: 1
-  extraAcceleration: 11
-  delayTime: 2
-  rateOfFire: 0.5
+  extraAcceleration: 1
+  delayTime: 1
+  rateOfFire: 2
   bullet: {fileID: 5819930154466079903, guid: ada2674911ec2254a86f2f70dd5e71eb, type: 3}
   ShootingPoint: {fileID: 646691626586567888}
 --- !u!1 &8881588694750315966

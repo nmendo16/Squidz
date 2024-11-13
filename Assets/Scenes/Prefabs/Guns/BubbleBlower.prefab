@@ -248,12 +248,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  impulse: 10
+  impulse: 2
   velocityMultiplier: 5
   bulletAcelleration: 2
   extraAcceleration: 1
   delayTime: 1
-  rateOfFire: 0.1
+  rateOfFire: 0.05
   bullet: {fileID: 7224270283458579912, guid: c6ff5c2297859f3478249f988013fe18, type: 3}
   ShootingPoint: {fileID: 646691626586567888}
 --- !u!1 &8881588694750315966
