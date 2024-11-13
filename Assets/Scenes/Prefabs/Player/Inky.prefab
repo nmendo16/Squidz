@@ -217,6 +217,7 @@ MonoBehaviour:
   rotationSpeed: 200
   hp: 100
   isPlayer2: 1
+  animator: {fileID: 1917765157687648746}
   arenaCollider: {fileID: 0}
   bounceLearp: 5
 --- !u!50 &249897922454688530
@@ -277,6 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   player: {fileID: 8361952122693661568}
+  animator: {fileID: 1917765157687648746}
   healthSprites:
   - {fileID: 21300000, guid: e625c83e9fa457d4ba6f25be22fe05ee, type: 3}
   - {fileID: 21300000, guid: 5b960175ce691084cb2c71a94f338a39, type: 3}

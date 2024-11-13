@@ -8,6 +8,9 @@ public class PlayerHealthSystem : MonoBehaviour
     public float hp = 100f;
     [SerializeField]
     private NewPlayerMovement player;
+    [SerializeField]
+    private Animator animator;
+    private bool playerDied = false;
 
     // Array to hold the different health sprites
     public Sprite[] healthSprites; // Assign in Inspector (100, 80, 60, 40, 20, empty)
@@ -26,13 +29,15 @@ public class PlayerHealthSystem : MonoBehaviour
         hp -= damage;
         Debug.Log("HP = " + hp);
 
+        StartCoroutine(PlayHitAnimationCrutine());
+
         UpdateHealthSprite();
         // Check if the player's health has reached 0 or below
-        if (hp <= 0)
+        if (hp <= 0 && playerDied == false)
         {
-            
+            playerDied = true;
             // Call the win event to determine the winner
-            StartCoroutine(PlayerDiedCorutine());
+            PlayerDied();
             // Call the win event from WinEvent script to check who won
             
 
@@ -62,11 +67,18 @@ public class PlayerHealthSystem : MonoBehaviour
 
     }
 
-    IEnumerator PlayerDiedCorutine()
+    public void PlayerDied()
     {
         winEventSystem.CheckForWin(); // Assuming CheckForWin() handles the win condition
-        yield return new WaitForSeconds(3);
+        animator.SetBool("lose", true);
         HealthEventManager.PlayerDiedEvent(player.GetPlayerNumber());
+    }
+
+    IEnumerator PlayHitAnimationCrutine()
+    {
+        animator.SetBool("damage", true);
+        yield return new WaitForSeconds(1);
+        animator.SetBool("damage", false);
     }
 
 }

@@ -6,6 +6,8 @@ public class NewPlayerMovement : MonoBehaviour
     public float hp = 100f;
     [SerializeField] private bool isPlayer2 = false;
 
+    [SerializeField]
+    private Animator animator;
     private Rigidbody2D rb;
     private GunManager gunManager;
     public Collider2D arenaCollider;// add the arena bouds collider
@@ -28,7 +30,8 @@ public class NewPlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         HandleRotation();
-        
+        animator.SetFloat("velocity", rb.velocity.magnitude);
+
         if (!isPlayer2)
         {
             if (Input.GetKey(KeyCode.S))
@@ -94,5 +97,6 @@ public class NewPlayerMovement : MonoBehaviour
     {
         return isPlayer2;
     }
+
 
 }
