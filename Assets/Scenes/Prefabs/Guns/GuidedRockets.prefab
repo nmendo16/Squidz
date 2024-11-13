@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  impulse: 20
+  impulse: 40
   velocityMultiplier: 3
   bulletAcelleration: 1
   extraAcceleration: 10
