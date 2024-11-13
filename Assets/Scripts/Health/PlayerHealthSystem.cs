@@ -15,7 +15,7 @@ public class PlayerHealthSystem : MonoBehaviour
 
     // Reference to WinEvent (the script handling win/loss events)
     public WinEvent winEventSystem;
-
+    
     private void Start()
     {
         UpdateHealthSprite(); // Initialize health sprite at start
@@ -27,7 +27,6 @@ public class PlayerHealthSystem : MonoBehaviour
         Debug.Log("HP = " + hp);
 
         UpdateHealthSprite();
-
         // Check if the player's health has reached 0 or below
         if (hp <= 0)
         {
