@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 4434875279583644857}
   - component: {fileID: 3188239842366445181}
   - component: {fileID: 9055522158739598628}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,8 +289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23, y: 7.172}
-  m_SizeDelta: {x: 272.7953, y: 287.1392}
+  m_AnchoredPosition: {x: -30, y: -5}
+  m_SizeDelta: {x: 247.9672, y: 260.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3188239842366445181
 CanvasRenderer:
