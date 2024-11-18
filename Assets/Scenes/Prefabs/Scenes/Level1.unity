@@ -635,6 +635,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4afab5f03a03e41aa42c83b0acbedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &642362313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7869127042327076613, guid: 655e42dad2a7d024bb8a748814eba4fe, type: 3}
+  m_PrefabInstance: {fileID: 204507816}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06bd3f2d2b7f27141a7fa3544bd062d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &710599532
 GameObject:
   m_ObjectHideFlags: 0
@@ -147428,6 +147439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 3152227875120526544, guid: e900efbbb2a9ba343827f225193b7cf7, type: 3}
+      propertyPath: scoreTracker
+      value: 
+      objectReference: {fileID: 642362313}
     - target: {fileID: 3328759762987387087, guid: e900efbbb2a9ba343827f225193b7cf7, type: 3}
       propertyPath: pauseMenu
       value: 

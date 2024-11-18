@@ -73,4 +73,9 @@ public class ScoreTracker : MonoBehaviour
 
         HealthEventManager.PlayerDied -= AwardPoint;
     }
+
+    public int getRoundNumber()
+    {
+        return player1Score + player2Score;
+    }
 }

@@ -198,3 +198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbbe0cc7cff82f4dbbc6b8903a8f691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreTracker: {fileID: 0}
+  roundImages:
+  - {fileID: 21300000, guid: 4748fc69af044694997c9fce1e5e0785, type: 3}
+  - {fileID: 21300000, guid: 4bad9ac749dbbf945a354a71187c0503, type: 3}
+  - {fileID: 21300000, guid: 0d767a84250374a43b0634a2636e267f, type: 3}
+  roundImage: {fileID: 7129443285746290180}
