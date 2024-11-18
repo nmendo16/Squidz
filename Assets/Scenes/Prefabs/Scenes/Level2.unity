@@ -509,17 +509,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 655e42dad2a7d024bb8a748814eba4fe, type: 3}
---- !u!114 &1206732690 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7869127042327076613, guid: 655e42dad2a7d024bb8a748814eba4fe, type: 3}
-  m_PrefabInstance: {fileID: 1206732689}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06bd3f2d2b7f27141a7fa3544bd062d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1219627011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -546,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1647361464496742969, guid: e900efbbb2a9ba343827f225193b7cf7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1647361464496742969, guid: e900efbbb2a9ba343827f225193b7cf7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -587,7 +576,7 @@ PrefabInstance:
     - target: {fileID: 3152227875120526544, guid: e900efbbb2a9ba343827f225193b7cf7, type: 3}
       propertyPath: scoreTracker
       value: 
-      objectReference: {fileID: 1206732690}
+      objectReference: {fileID: 0}
     - target: {fileID: 3328759762987387087, guid: e900efbbb2a9ba343827f225193b7cf7, type: 3}
       propertyPath: pauseMenu
       value: 

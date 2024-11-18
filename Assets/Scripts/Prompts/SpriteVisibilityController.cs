@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpriteVisibilityController : MonoBehaviour
 {
-    [SerializeField]
     private ScoreTracker scoreTracker;
 
     [SerializeField]
@@ -16,6 +15,7 @@ public class SpriteVisibilityController : MonoBehaviour
     void Start()
     {
         // Start the coroutine when the scene loads
+        scoreTracker = FindFirstObjectByType<ScoreTracker>();
         roundImage.GetComponent<SpriteRenderer>().sprite = roundImages[scoreTracker.getRoundNumber()];
         StartCoroutine(HideSpriteAfterDelay());
     }
