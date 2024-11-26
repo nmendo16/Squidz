@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //ignore this line
+    
     public float rotationSpeed = 100f;  // Rotation sensitivity
     public float impulseForce = 10f;    // Force of the shot backward
-    public float movementDuration = 0.5f;  // How long the movement should last
-    public float maxDistance = 5f;      // Maximum distance to move before stopping
+    public float movementDuration = 50f;  // How long the movement should last
+    public float maxDistance = 50f;      // Maximum distance to move before stopping
+    public GunBehavior gun;
+
 
     private Rigidbody2D rb;
     private bool isMoving = false;
     private Vector2 startPosition;
     private float moveTimeRemaining;
+
+    public ProjectileBase projectilePrefab;
 
     void Start()
     {
@@ -26,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         HandleRotation();
 
         // Detect shooting input (e.g., pressing Left Shift to shoot backward)
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isMoving)
+        if (Input.GetKey(KeyCode.LeftControl) && !isMoving)
         {
             Shoot();
         }
@@ -51,11 +55,18 @@ public class PlayerMovement : MonoBehaviour
     void Shoot()
     {
         // Apply an impulse in the opposite direction of the current rotation (backward)
-        rb.AddForce(-transform.up * impulseForce, ForceMode2D.Impulse);
+
+        rb.velocity = Vector2.zero;
+        rb.AddForce(-transform.up * gun.Shoot(), ForceMode2D.Impulse);
 
         // Start tracking movement time and position
         startPosition = rb.position;
         moveTimeRemaining = movementDuration;
+
+        //Shoot bullet
+        //ProjectileBase projectile = Instantiate(this.projectilePrefab, this.transform.position, this.transform.rotation);
+       // projectile.Project(this.transform.up);
+
         isMoving = true;
     }
 
@@ -65,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         moveTimeRemaining -= Time.deltaTime;
 
         // Stop the movement based on time or distance
-        if (moveTimeRemaining <= 0 || Vector2.Distance(startPosition, rb.position) >= maxDistance)
+        if (moveTimeRemaining <= 0)
         {
             // Stop the object by setting the velocity to zero
             rb.velocity = Vector2.zero;
