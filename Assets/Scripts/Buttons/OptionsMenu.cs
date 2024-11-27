@@ -11,6 +11,9 @@ public class OptionsMenu : MonoBehaviour
     public Button quitYesButton;
     public Button quitNoButton;
 
+    //add reset game -- this prompts, THIS ERASES ALL PROGRESS OF YOUR BATTLE, do you wish to proceed? restart | cancel
+    //add ABOUT SQUIDZ with GUNZ --static pages of instructions/controls/tutorial, story, credits
+
     private bool soundOn = true;
 
     // Define an event to communicate with the MainMenu script
@@ -19,6 +22,10 @@ public class OptionsMenu : MonoBehaviour
 
     void Start()
     {
+        backButton.gameObject.SetActive(true);
+        soundToggleButton.gameObject.SetActive(true);
+        quitPromptButton.gameObject.SetActive(true);
+
         backButton.onClick.AddListener(CloseOptions);
         soundToggleButton.onClick.AddListener(ToggleSound);
         quitPromptButton.onClick.AddListener(ShowQuitPrompt);
