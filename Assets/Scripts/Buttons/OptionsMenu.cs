@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -74,7 +75,7 @@ public class OptionsMenu : MonoBehaviour
 
     void QuitGame()
     {
-        Application.Quit();
+        StartCoroutine(DelayQuit());
     }
 
     void CloseOptions()
@@ -82,6 +83,11 @@ public class OptionsMenu : MonoBehaviour
         // loads the homepage
         SceneManager.LoadScene("MenuScreen");
     }
-
+    // Delay Quit Game
+    IEnumerator DelayQuit()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Application.Quit();
+    }
        
 } 
