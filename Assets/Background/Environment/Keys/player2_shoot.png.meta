@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d2a1f4c4966fdcf4f87f8e1fb91686e4
+guid: 3d4c69a99c9c3f647bd89f3956718080
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: D-Key_0
+      name: player2_shoot_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e7478152d4e1934d8cf47304cecb6de
-      internalID: -416664989
+      spriteID: 0a89dc5768613284896de98a066bc0fe
+      internalID: 1672139806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: D-Key_1
+      name: player2_shoot_1
       rect:
         serializedVersion: 2
         x: 32
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b33cbeadf0455024ab6985804366a5cf
-      internalID: -803098954
+      spriteID: 8abf924457fa96d4185824dd8913a99a
+      internalID: 1079765600
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      D-Key_0: -416664989
-      D-Key_1: -803098954
+      player2_shoot_0: 1672139806
+      player2_shoot_1: 1079765600
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
