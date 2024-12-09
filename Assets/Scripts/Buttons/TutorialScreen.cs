@@ -9,10 +9,10 @@ public class TutorialScreen : MonoBehaviour
 
     void Start()
     {
-        title.SetActive(true);
-        buttQuit.gameObject.SetActive(true);
-        buttQuit.onClick.AddListener(QuitGame);
-        //backgroundOverlay.enabled = false;
+        //title.SetActive(true);
+        //buttQuit.gameObject.SetActive(true);
+        //buttQuit.onClick.AddListener(QuitGame);
+        ////backgroundOverlay.enabled = false;
     }
 
     void QuitGame()
