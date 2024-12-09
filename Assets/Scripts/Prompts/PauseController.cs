@@ -3,7 +3,8 @@ using UnityEngine.UI; // Import UI namespace for Image
 
 public class PauseController : MonoBehaviour
 {
-    public GameObject pauseMenu; // Drag the UI Image here
+    public GameObject pauseMenu;
+//    public GameObject optionsMenu;
     private bool isPaused = false;
 
     void Start()
@@ -12,6 +13,7 @@ public class PauseController : MonoBehaviour
         if (pauseMenu != null)
         {
             pauseMenu.SetActive(false);
+ //           optionsMenu.SetActive(false);
         }
     }
 
@@ -22,22 +24,19 @@ public class PauseController : MonoBehaviour
         {
             TogglePause();
         }
-        // Toggle resume with ENTER key if paused
-        else if (isPaused && Input.GetKeyDown(KeyCode.Return))
-        {
-            TogglePause();
-        }
+      
     }
 
     void TogglePause()
     {
         // Toggle the pause state
-        isPaused = !isPaused;
+        isPaused = !isPaused;   
 
         // Show or hide the pause menu UI
         if (pauseMenu != null)
         {
             pauseMenu.SetActive(isPaused);
+   //         optionsMenu.SetActive(isPaused);
         }
 
         // Pause or unpause game time
