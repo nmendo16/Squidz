@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 8281436278968106453}
   - component: {fileID: 1917765157687648746}
   - component: {fileID: 1510768667576025287}
-  - component: {fileID: 4102563580392637841}
   m_Layer: 0
   m_Name: PS2
   m_TagString: Untagged
@@ -152,18 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newScale: {x: 0.3, y: 0.3, z: 0.5}
---- !u!114 &4102563580392637841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3173171144395574789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7bcf955ab31984438638feacba425fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9036295773762560621
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +187,7 @@ Transform:
   m_Children:
   - {fileID: 1447741295097322820}
   - {fileID: 7812384241602806914}
+  - {fileID: 7431400511171258168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &8361952122693661568
@@ -323,3 +311,69 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.4}
   m_Size: {x: 0.8, y: 1.5}
   m_Direction: 0
+--- !u!1001 &1700281646636131867
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 832248889834881082}
+    m_Modifications:
+    - target: {fileID: 2586761766310849987, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_Name
+      value: P2InGameTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835258699398833500, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+--- !u!4 &7431400511171258168 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8122591857903927587, guid: 4b47d78eb20f3134c93b15358c239cf7, type: 3}
+  m_PrefabInstance: {fileID: 1700281646636131867}
+  m_PrefabAsset: {fileID: 0}
