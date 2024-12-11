@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // Import UI namespace
+using UnityEngine.SceneManagement; 
 
 public class PlayerHealthSystem : MonoBehaviour
 {
@@ -18,10 +19,30 @@ public class PlayerHealthSystem : MonoBehaviour
 
     // Reference to WinEvent (the script handling win/loss events)
     public WinEvent winEventSystem;
-    
+
+    // Reference to the health bar material
+    public Material healthBarMaterial;
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ResetHealthBar(); // Reset health to full when the new scene is loaded
+        ResetHealthBarColor(); // Reset the health bar color to green
+
+    }
     private void Start()
     {
+        ResetHealthBar(); // Initialize health to full at the start of the scene
         UpdateHealthSprite(); // Initialize health sprite at start
+        ResetHealthBarColor();
     }
 
     public void OnHit(float damage)
@@ -31,20 +52,39 @@ public class PlayerHealthSystem : MonoBehaviour
 
         StartCoroutine(PlayHitAnimationCrutine());
 
-        UpdateHealthSprite();
+        UpdateHealthBar(); // Update shader health bar
+        UpdateHealthSprite(); // Update UI sprite
+
         // Check if the player's health has reached 0 or below
         if (hp <= 0 && playerDied == false)
         {
             playerDied = true;
-            // Call the win event to determine the winner
             PlayerDied();
-            // Call the win event from WinEvent script to check who won
-            
-
-
-            // Optionally, you can stop further health updates or handle death logic here
         }
     }
+
+    // Method to reset the health bar and shader at the start of the scene
+    private void ResetHealthBar()
+    {
+        hp = 100f; // Reset health to full
+        UpdateHealthBar(); // Update shader to reflect full health
+    }
+
+    // Method to update the shader's health bar based on current health
+    private void UpdateHealthBar()
+    {
+        if (healthBarMaterial != null)
+        {
+            float normalizedHealth = hp / 100f; // Normalize health (0-1)
+            Debug.Log("Updating Health Bar: " + normalizedHealth); // Debug log to check normalized value
+            healthBarMaterial.SetFloat("_Health", normalizedHealth); // Update shader
+        }
+        else
+        {
+            Debug.LogWarning("Health bar material is not assigned.");
+        }
+    }
+
 
     // Method to update the health sprite based on current health
     private void UpdateHealthSprite()
@@ -64,7 +104,6 @@ public class PlayerHealthSystem : MonoBehaviour
         }
         // Update the sprite based on health
         healthImage.sprite = healthSprites[spriteIndex];
-
     }
 
     public void PlayerDied()
@@ -72,6 +111,15 @@ public class PlayerHealthSystem : MonoBehaviour
         winEventSystem.CheckForWin(); // Assuming CheckForWin() handles the win condition
         animator.SetBool("lose", true);
         HealthEventManager.PlayerDiedEvent(player.GetPlayerNumber());
+
+        // Change scene or trigger game-over logic
+        StartCoroutine(ChangeSceneAfterDelay());
+    }
+
+    IEnumerator ChangeSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(3); // Wait for animation or effects
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene"); // Replace with your scene name
     }
 
     IEnumerator PlayHitAnimationCrutine()
@@ -79,6 +127,20 @@ public class PlayerHealthSystem : MonoBehaviour
         animator.SetBool("damage", true);
         yield return new WaitForSeconds(1);
         animator.SetBool("damage", false);
+    }
+
+    // Method to reset the health bar's color or material at the start of a new scene
+    private void ResetHealthBarColor()
+    {
+        if (healthBarMaterial != null)
+        {
+            // Reset the health to full (green color) in the shader
+            healthBarMaterial.SetFloat("_Health", 1f); // 1f means full health (green)
+        }
+        else
+        {
+            Debug.LogWarning("Health bar material is not assigned.");
+        }
     }
 
 }

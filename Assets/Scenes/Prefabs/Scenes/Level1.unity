@@ -805,6 +805,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 576687212}
     - target: {fileID: 1004368168333456540, guid: 5b303feaadf25cc4294f9abaad68ceeb, type: 3}
+      propertyPath: healthBarMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: fae1bf68eed713341b97b746aa56f876, type: 2}
+    - target: {fileID: 1004368168333456540, guid: 5b303feaadf25cc4294f9abaad68ceeb, type: 3}
       propertyPath: healthSprites.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -147817,6 +147821,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 684170874338681027, guid: 3377d436f0c02274b8b16233f2d19b90, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 493
+      objectReference: {fileID: 0}
+    - target: {fileID: 684170874338681027, guid: 3377d436f0c02274b8b16233f2d19b90, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 41
+      objectReference: {fileID: 0}
     - target: {fileID: 793079803200244966, guid: 3377d436f0c02274b8b16233f2d19b90, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -147968,6 +147980,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1585537763414419759, guid: 3377d436f0c02274b8b16233f2d19b90, type: 3}
+    - {fileID: 5648024260329557242, guid: 3377d436f0c02274b8b16233f2d19b90, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3377d436f0c02274b8b16233f2d19b90, type: 3}
