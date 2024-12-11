@@ -40,8 +40,20 @@ public class OptionsMenu : MonoBehaviour
     void ToggleSound()
     {
         soundOn = !soundOn;
+        AudioListener.pause = soundOn;
         soundToggleButton.GetComponentInChildren<Text>().text = soundOn ? "Sound ON" : "Sound OFF";
         // Optional: Add sound toggle functionality here
+        //if (soundOn == true)
+        //{
+        //    soundOn = false;
+        //    AudioListener.pause = true;
+        //}
+        //else
+        //{
+        //    soundOn = true;
+        //    AudioListener.pause = false;
+        //}
+        //soundToggleButton.GetComponentInChildren<Text>().text = soundOn ? "Sound ON" : "Sound OFF";
     }
 
     void ShowQuitPrompt()

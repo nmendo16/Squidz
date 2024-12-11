@@ -13,6 +13,7 @@ public class BtnSoundController : MonoBehaviour
     {
         button.PlayOneShot(hoverSound);
     }
+    //Function #2: Click effect
     public void ClickedSFX()
     {
         button.PlayOneShot(clickedSound);

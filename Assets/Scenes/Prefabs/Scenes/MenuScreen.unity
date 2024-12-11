@@ -2926,6 +2926,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7944152380401435761, guid: c841450a30a710e439431ed1043b5db2, type: 3}
+      propertyPath: m_Text
+      value: S O U N D S  SETTINGS
+      objectReference: {fileID: 0}
     - target: {fileID: 7949038770506733596, guid: c841450a30a710e439431ed1043b5db2, type: 3}
       propertyPath: clickedSound
       value: 
