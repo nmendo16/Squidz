@@ -12,6 +12,14 @@ public class VideoSceneLoader : MonoBehaviour
         videoPlayer.loopPointReached += LoadMainMenuScene;
     }
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(mainMenuSceneName);
+        }
+    }
+
     void LoadMainMenuScene(VideoPlayer vp)
     {
         SceneManager.LoadScene(mainMenuSceneName);
