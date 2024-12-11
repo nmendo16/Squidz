@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MainMenu : MonoBehaviour
 {
@@ -36,20 +37,47 @@ public class MainMenu : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        StartCoroutine(DelayScene());
     }
 
     void QuitGame()
     {
-        Application.Quit();
+        StartCoroutine (DelayQuit());
     }
 
     void OpenOptionsMenu()
     {
-        //ring.SetActive(false);
-        //title.SetActive(false);
+        StartCoroutine (DelayOptionMenu());
+
+        // Get the OptionsMenu script from the instance and set up the callback
+        //OptionsMenu optionsMenuScript = optionsMenuInstance.GetComponent<OptionsMenu>();
+        //    optionsMenuScript.onCloseOptions += CloseOptionsMenu;
         
+    }
+    // Delay Scene Transition for click sound
+    IEnumerator DelayScene()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("Level1");
+    }
+    // Delay Option Menu for click sound
+    IEnumerator DelayOptionMenu()
+    {
+        yield return new WaitForSeconds(0.5f);
+        ring.SetActive(false);
+        title.SetActive(false);
         optionsMenuPrefab.SetActive(true);
+
+        buttStart.gameObject.SetActive(false);
+        buttQuit.gameObject.SetActive(false);
+        buttOptions.gameObject.SetActive(false);
+    }
+    // Delay Quit Game
+    IEnumerator DelayQuit()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Application.Quit();
+    }
         mainItems.SetActive(false);
 
         //buttStart.gameObject.SetActive(false);
