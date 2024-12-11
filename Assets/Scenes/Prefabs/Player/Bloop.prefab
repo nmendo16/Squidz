@@ -311,6 +311,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d4c573fde1596274b9630841af35ffe2, type: 3}
   healthImage: {fileID: 0}
   winEventSystem: {fileID: 0}
+  healthBarMaterial: {fileID: 2100000, guid: 57bd8dd7e2609ca40a2a86c6ce9211be, type: 2}
 --- !u!1001 &3371291418229503161
 PrefabInstance:
   m_ObjectHideFlags: 0

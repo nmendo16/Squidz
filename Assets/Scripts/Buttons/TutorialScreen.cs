@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TutorialScreen : MonoBehaviour
 {
-    public Button buttQuit;
+    public Button buttReturn;
     public GameObject title;
     //public Image backgroundOverlay;
 
@@ -13,10 +14,11 @@ public class TutorialScreen : MonoBehaviour
         //buttQuit.gameObject.SetActive(true);
         //buttQuit.onClick.AddListener(QuitGame);
         ////backgroundOverlay.enabled = false;
+        buttReturn.onClick.AddListener(Return);
     }
 
-    void QuitGame()
+    void Return()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MenuScreen");
     }
 }

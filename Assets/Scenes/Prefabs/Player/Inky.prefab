@@ -276,6 +276,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 22f55c0716581684e940777d0f206839, type: 3}
   healthImage: {fileID: 0}
   winEventSystem: {fileID: 0}
+  healthBarMaterial: {fileID: 2100000, guid: 4ed0973db7dde6849ada46a94b574b7e, type: 2}
 --- !u!70 &2205950513870671294
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

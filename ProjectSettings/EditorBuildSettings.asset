@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prefabs/Scenes/Player1Wins.unity
     guid: 64c877d47d0cb7b4a84d535e336c79bb
+  - enabled: 1
+    path: Assets/Scenes/Prefabs/Scenes/TutorialScreen.unity
+    guid: b6615c9100e8b734f98fc7be2ede217e
   m_configObjects: {}
