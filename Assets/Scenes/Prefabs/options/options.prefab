@@ -749,7 +749,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 23, y: -19, z: -9}
-  m_LocalScale: {x: 72.10399, y: 72.10399, z: 72.10399}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8885977766884296293}
@@ -830,6 +830,7 @@ MonoBehaviour:
   quitPrompt: {fileID: 3536131300689862730}
   quitYesButton: {fileID: 1195644369726363822}
   quitNoButton: {fileID: 7511323546195716905}
+  mainItems: {fileID: 0}
 --- !u!1 &8273797418221410855
 GameObject:
   m_ObjectHideFlags: 0

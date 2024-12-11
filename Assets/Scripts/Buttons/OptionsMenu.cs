@@ -10,6 +10,7 @@ public class OptionsMenu : MonoBehaviour
     public GameObject quitPrompt; // "Are you sure?" prompt
     public Button quitYesButton;
     public Button quitNoButton;
+    public GameObject mainItems;
 
     //add reset game -- this prompts, THIS ERASES ALL PROGRESS OF YOUR BATTLE, do you wish to proceed? restart | cancel
     //add ABOUT SQUIDZ with GUNZ --static pages of instructions/controls/tutorial, story, credits
@@ -17,7 +18,7 @@ public class OptionsMenu : MonoBehaviour
     private bool soundOn = true;
 
     // Define an event to communicate with the MainMenu script
-    public delegate void CloseOptionsAction();
+    //public delegate void CloseOptionsAction();
     //public event CloseOptionsAction onCloseOptions;
 
     void Start()
@@ -80,7 +81,18 @@ public class OptionsMenu : MonoBehaviour
     void CloseOptions()
     {
         // loads the homepage
-        SceneManager.LoadScene("MenuScreen");
+        //SceneManager.LoadScene("MenuScreen");
+
+        if (SceneManager.GetActiveScene().name == "MenuScreen")
+        {
+            mainItems.SetActive(true);
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            SceneManager.LoadScene("MenuScreen");
+        }
+
     }
 
        
