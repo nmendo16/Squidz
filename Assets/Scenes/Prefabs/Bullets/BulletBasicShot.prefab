@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   lifetime: 5
+  destroySound: {fileID: 8300000, guid: eef5da421b1e40143bd4ff60db503c56, type: 3}
+  spawnSound: {fileID: 8300000, guid: 6a179f3c56a05b04e8390eed8292e89b, type: 3}
 --- !u!50 &7136873346154237785
 Rigidbody2D:
   serializedVersion: 4
