@@ -63,11 +63,13 @@ public class ScoreTracker : MonoBehaviour
 
         else if (player1Score < player2Score)
         {
+            ResetPoints();
             SceneManager.LoadScene("player2Wins");
         }
 
         else
         {
+            ResetPoints();
             SceneManager.LoadScene("player1Wins");
         }
 
@@ -78,4 +80,11 @@ public class ScoreTracker : MonoBehaviour
     {
         return player1Score + player2Score;
     }
+
+    private void ResetPoints()
+    {
+        player1Score = 0;
+        player2Score = 0;
+    }
+
 }
