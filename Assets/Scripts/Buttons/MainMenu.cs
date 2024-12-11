@@ -63,14 +63,15 @@ public class MainMenu : MonoBehaviour
     // Delay Option Menu for click sound
     IEnumerator DelayOptionMenu()
     {
-        yield return new WaitForSeconds(0.5f);
-        ring.SetActive(false);
-        title.SetActive(false);
+        yield return new WaitForSeconds(0.3f);
+        //ring.SetActive(false);
+        //title.SetActive(false);
         optionsMenuPrefab.SetActive(true);
+        mainItems.SetActive(false);
 
-        buttStart.gameObject.SetActive(false);
-        buttQuit.gameObject.SetActive(false);
-        buttOptions.gameObject.SetActive(false);
+        //buttStart.gameObject.SetActive(false);
+        //buttQuit.gameObject.SetActive(false);
+        //buttOptions.gameObject.SetActive(false);
     }
     // Delay Quit Game
     IEnumerator DelayQuit()
@@ -78,7 +79,7 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Application.Quit();
     }
-        mainItems.SetActive(false);
+
 
         //buttStart.gameObject.SetActive(false);
         //buttQuit.gameObject.SetActive(false);
@@ -103,4 +104,4 @@ public class MainMenu : MonoBehaviour
     //    ring.SetActive(true);
     //    title.SetActive(true);
     //}
-}
+
