@@ -12,12 +12,10 @@ public class NewPlayerMovement : MonoBehaviour
     private GunManager gunManager;
     public Collider2D arenaCollider;// add the arena bouds collider
     public float bounceLearp = 5f;
-    public AudioSource playerAudio;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gunManager = GetComponent<GunManager>();
-        playerAudio = GetComponent<AudioSource>();
 
         if (gunManager == null)
         {
@@ -98,14 +96,6 @@ public class NewPlayerMovement : MonoBehaviour
     public bool GetPlayerNumber()
     {
         return isPlayer2;
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            playerAudio.PlayOneShot(playerAudio.clip);
-        }
     }
 
 }

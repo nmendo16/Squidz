@@ -9,6 +9,7 @@ public class WinEvent : MonoBehaviour
 
     public Sprite BloopWinSprite; // Sprite for Bloop (Player 1) winning
     public Sprite InkyWinSprite; // Sprite for Inky (Player 2) winning
+    public AudioSource winAudio;
 
     void Start()
     {
@@ -33,6 +34,7 @@ public class WinEvent : MonoBehaviour
     {
         // Show the win prompt UI
         winPrompt.gameObject.SetActive(true);
+        winAudio.Play();
 
         // Set the win prompt sprite based on the winning player
         if (winningPlayer == 1)

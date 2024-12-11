@@ -9,13 +9,20 @@ public class PlayerSoundController : MonoBehaviour
     public AudioSource flameAudio;
     public AudioSource rocketAudio;
     public AudioSource cannonAudio;
+    public AudioSource criticalAudio;
+    [SerializeField]
+    private PlayerHealthSystem player;
     void Start()
     {
-        
+        player = GetComponent<PlayerHealthSystem>();
     }
-    //Function#1: Wall bump effect
+    //Function: SFX
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        if(player.hp < 20f)
+        {
+            criticalAudio.PlayOneShot(criticalAudio.clip);
+        }
         switch (collision.gameObject.tag)
         {
             case "Wall":
@@ -34,14 +41,6 @@ public class PlayerSoundController : MonoBehaviour
                 wallhitAudio.PlayOneShot(cannonAudio.clip);
                 break;
         }
-        //if (collision.gameObject.CompareTag("Wall"))
-        //{
-        //    wallhitAudio.PlayOneShot(wallhitAudio.clip);
-        //}
-        //if (collision.gameObject.CompareTag("Bullet"))
-        //{
-        //    wallhitAudio.PlayOneShot(normalbulletAudio.clip);
-        //}
     }
 
 }
