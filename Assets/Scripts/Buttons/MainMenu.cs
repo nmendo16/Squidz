@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public Button buttStart;
     public Button buttQuit;
     public Button buttOptions;
+    public Button buttTutorial;
     public GameObject title;//just for visibility
     public GameObject ring;//just for visibility
     public GameObject optionsMenuPrefab; // Prefab for the options menu
@@ -30,6 +31,7 @@ public class MainMenu : MonoBehaviour
         buttStart.onClick.AddListener(StartGame);
         buttQuit.onClick.AddListener(QuitGame);
         buttOptions.onClick.AddListener(OpenOptionsMenu);
+        buttTutorial.onClick.AddListener(OpenTutorial);
 
         optionsMenuPrefab.SetActive(false);
         backgroundOverlay.enabled = false; // Ensure overlay is hidden initially
@@ -53,6 +55,17 @@ public class MainMenu : MonoBehaviour
         //OptionsMenu optionsMenuScript = optionsMenuInstance.GetComponent<OptionsMenu>();
         //    optionsMenuScript.onCloseOptions += CloseOptionsMenu;
         
+    }
+
+    void OpenTutorial()
+    {
+        StartCoroutine (DelayTutorial());
+    }
+
+    IEnumerator DelayTutorial()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("TutorialScreen");
     }
     // Delay Scene Transition for click sound
     IEnumerator DelayScene()
