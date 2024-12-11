@@ -111,6 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 50
   lifetime: 10
+  destroySound: {fileID: 8300000, guid: b3f4548e998647341ae2dc1cd47af5da, type: 3}
+  spawnSound: {fileID: 8300000, guid: ac79e0d705fcfea43b4d8d634b22df4e, type: 3}
 --- !u!1 &8266427422663606850
 GameObject:
   m_ObjectHideFlags: 0

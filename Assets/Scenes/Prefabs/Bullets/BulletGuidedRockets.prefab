@@ -195,3 +195,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   lifetime: 5
+  destroySound: {fileID: 8300000, guid: d29e911eef99f174f9c5a73bcc31e707, type: 3}
+  spawnSound: {fileID: 8300000, guid: a8dab26e46200ed4a95fb004b76c53ab, type: 3}
