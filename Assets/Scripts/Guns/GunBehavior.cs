@@ -15,9 +15,12 @@ public class GunBehavior : MonoBehaviour
     public GameObject bullet;
     public Transform ShootingPoint;
 
+    public AudioSource gunSound;
+
     private void Start()
     {
         lastShotTime = -rateOfFire; // Allows shooting immediately at the start
+        gunSound = GetComponent<AudioSource>();
     }
 
     public float Shoot()
@@ -26,6 +29,7 @@ public class GunBehavior : MonoBehaviour
         if (Time.time - lastShotTime >= rateOfFire)
         {
             lastShotTime = Time.time; // Update the last shot time
+            gunSound.PlayOneShot(gunSound.clip); // Play the shooting sound
 
             GameObject bulletInstance = Instantiate(bullet, ShootingPoint.position, ShootingPoint.rotation);
 

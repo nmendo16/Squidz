@@ -98,5 +98,4 @@ public class NewPlayerMovement : MonoBehaviour
         return isPlayer2;
     }
 
-
 }

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Wall
+  - NormalBullet
+  - Rocket
+  - Flame
+  - Cannon
   layers:
   - Default
   - TransparentFX
