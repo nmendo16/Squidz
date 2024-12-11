@@ -4,16 +4,44 @@ using UnityEngine;
 
 public class PlayerSoundController : MonoBehaviour
 {
-    public AudioSource playerAudio;
-    public AudioClip wallbumpSound;
-    public AudioClip hitSound;
-    //Function#1: Wall bump effect
-    public void OnCollisionEnter(Collision collision)
+    public AudioSource wallhitAudio;
+    public AudioSource normalbulletAudio;
+    public AudioSource flameAudio;
+    public AudioSource rocketAudio;
+    public AudioSource cannonAudio;
+    void Start()
     {
-        if (collision.gameObject.tag == "Wall")
+        
+    }
+    //Function#1: Wall bump effect
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        switch (collision.gameObject.tag)
         {
-            playerAudio.PlayOneShot(wallbumpSound);
+            case "Wall":
+                wallhitAudio.PlayOneShot(wallhitAudio.clip);
+                break;
+            case "NormalBullet":
+                wallhitAudio.PlayOneShot(normalbulletAudio.clip);
+                break;
+            case "Flame":
+                wallhitAudio.PlayOneShot(flameAudio.clip);
+                break;
+            case "Rocket":
+                wallhitAudio.PlayOneShot(rocketAudio.clip);
+                break;
+            case "Cannon":
+                wallhitAudio.PlayOneShot(cannonAudio.clip);
+                break;
         }
+        //if (collision.gameObject.CompareTag("Wall"))
+        //{
+        //    wallhitAudio.PlayOneShot(wallhitAudio.clip);
+        //}
+        //if (collision.gameObject.CompareTag("Bullet"))
+        //{
+        //    wallhitAudio.PlayOneShot(normalbulletAudio.clip);
+        //}
     }
 
 }

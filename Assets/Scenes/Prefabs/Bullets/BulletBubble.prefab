@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 5020833850964577961}
   m_Layer: 3
   m_Name: BulletBubble
-  m_TagString: Bullet
+  m_TagString: Flame
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -876,6 +876,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2722072206942331894, guid: 5b303feaadf25cc4294f9abaad68ceeb, type: 3}
+      propertyPath: m_Size.y
+      value: 1.447115
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722072206942331894, guid: 5b303feaadf25cc4294f9abaad68ceeb, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.026442528
+      objectReference: {fileID: 0}
     - target: {fileID: 2884089510791772099, guid: 5b303feaadf25cc4294f9abaad68ceeb, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -146760,7 +146768,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9b2f8757eae3a2241b9bd87f282ad1cc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -146768,7 +146776,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 11
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
